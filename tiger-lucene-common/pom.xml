@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.ota</groupId>
+		<artifactId>tiger</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>tiger-lucene-common</artifactId>
+	<name>tiger-lucene-common</name>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j2</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.46</version>
+		</dependency>
+
+		<!-- lucene 核心 -->
+		<dependency>
+			<groupId>org.apache.lucene</groupId>
+			<artifactId>lucene-core</artifactId>
+			<version>6.6.0</version>
+		</dependency>
+		<!-- lucene 一般分词器 -->
+		<dependency>
+			<groupId>org.apache.lucene</groupId>
+			<artifactId>lucene-analyzers-common</artifactId>
+			<version>6.6.0</version>
+		</dependency>
+		<!--对分词索引查询解析 -->
+		<dependency>
+			<groupId>org.apache.lucene</groupId>
+			<artifactId>lucene-queryparser</artifactId>
+			<version>6.6.0</version>
+		</dependency>
+		<!--检索关键字高亮显示 -->
+		<dependency>
+			<groupId>org.apache.lucene</groupId>
+			<artifactId>lucene-highlighter</artifactId>
+			<version>6.6.0</version>
+		</dependency>
+		<!-- 中文分词器 -->
+		<dependency>
+			<groupId>com.lucene</groupId>
+			<artifactId>ikAnalyzer</artifactId>
+			<version>6.5.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<!-- mvn package可以打包成可运行的jar文件 -->
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>${start-class}</mainClass>
+					<layout>ZIP</layout>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
