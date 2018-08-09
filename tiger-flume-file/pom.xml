@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.ota</groupId>
+		<artifactId>tiger</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>tiger-flume-file</artifactId>
+	<name>tiger-flume-file</name>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<version.flume>1.8.0</version.flume>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.flume</groupId>
+			<artifactId>flume-ng-core</artifactId>
+			<version>${version.flume}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.flume</groupId>
+			<artifactId>flume-ng-configuration</artifactId>
+			<version>${version.flume}</version>
+		</dependency>
+
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.apache.logging.log4j</groupId> -->
+<!-- 			<artifactId>log4j-core</artifactId> -->
+<!-- 			<version>2.6.2</version> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.apache.logging.log4j</groupId> -->
+<!-- 			<artifactId>log4j-api</artifactId> -->
+<!-- 			<version>2.6.2</version> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency>     桥接：告诉Slf4j使用Log4j2 -->
+<!-- 			<groupId>org.apache.logging.log4j</groupId> -->
+<!-- 			<artifactId>log4j-slf4j-impl</artifactId> -->
+<!-- 			<version>2.6.2</version> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.slf4j</groupId> 桥接：log4j1使用Log4j2 也支持其他实现到log4j的桥接，引入不同的jar包即可 -->
+<!-- 			<artifactId>log4j-over-slf4j</artifactId> -->
+<!-- 			<version>1.7.12</version> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>com.lmax</groupId> -->
+<!-- 			<artifactId>disruptor</artifactId> -->
+<!-- 			<version>3.3.6</version> -->
+<!-- 		</dependency> -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>

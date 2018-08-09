@@ -22,6 +22,7 @@ import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.index.IndexWriterConfig.OpenMode;
+import org.apache.lucene.index.Terms;
 import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.queryparser.classic.QueryParser.Operator;
 import org.apache.lucene.search.IndexSearcher;
@@ -170,6 +171,7 @@ public class AppTest extends TestCase {
             inWriter.addDocument(doc2);
             inWriter.addDocument(doc3);
             inWriter.commit();
+
         } catch (Exception e) {
             logger.error(e.getLocalizedMessage(), e);
         } finally {
@@ -245,6 +247,8 @@ public class AppTest extends TestCase {
         try {
             dir = FSDirectory.open(indexPath);
             reader = DirectoryReader.open(dir);
+            // 拿到term可以查到词频信息
+            // Terms terms = reader.getTermVector(0, "title");
             IndexSearcher searcher = new IndexSearcher(reader);
             Analyzer analyzer = new IKAnalyzer();
             QueryParser parser = new QueryParser(field, analyzer);
