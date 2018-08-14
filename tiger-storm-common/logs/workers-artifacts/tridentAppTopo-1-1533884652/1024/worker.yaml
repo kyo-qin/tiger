@@ -1,0 +1,4 @@
+worker-id: 05d18f2b-d78a-4890-8d3d-7e2afd90615e
+logs.users: []
+logs.groups: []
+topology.submitter.user: ota
