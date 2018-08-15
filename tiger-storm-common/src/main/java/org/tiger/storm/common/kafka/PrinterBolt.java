@@ -15,12 +15,15 @@ public class PrinterBolt extends BaseBasicBolt {
 
     @Override
     public void execute(Tuple input, BasicOutputCollector collector) {
-        logger.info(input.getValue(0).toString());
+        // get the sentence from the tuple and print it
+        String sentence = input.getString(0);
+        logger.info("Received Sentence: " + sentence);
+        System.out.println("Received Sentence: " + sentence);
     }
 
     @Override
     public void declareOutputFields(OutputFieldsDeclarer declarer) {
-
+        // we don't emit anything
     }
 
 }
