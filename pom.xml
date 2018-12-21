@@ -86,5 +86,7 @@
 		<module>tiger-zookeeper-client</module>
     <module>tiger-kafka-common</module>
     <module>tiger-storm-common</module>
+    <module>tiger-hystrix-common</module>
+    <module>tiger-guava-common</module>
   </modules>
 </project>
